@@ -22,7 +22,7 @@ public class Colors extends Application {
     }
 
     private VBox initInterface() {
-        VBox window = new VBox();
+        VBox root = new VBox();
         HBox up = new HBox();
         HBox down = new HBox();
         HBox centre = new HBox();
@@ -33,7 +33,7 @@ public class Colors extends Application {
         ImageView img5 = new ImageView();
 
 
-        window.getChildren().addAll(up, centre, down);
+        root.getChildren().addAll(up, centre, down);
         centre.getChildren().addAll(img4, img5);
         up.getChildren().addAll(img1, img2, img3);
 
@@ -115,7 +115,7 @@ public class Colors extends Application {
 
 
 
-        return window;
+        return root;
 
 
     }
