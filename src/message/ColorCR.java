@@ -30,9 +30,9 @@ public class ColorCR extends Application{
         Circle circle = new Circle(50);
         ColorPicker circleColor = new ColorPicker();
         ColorPicker backgroundColor = new ColorPicker();
-        Slider sr = new Slider(0, 100, 50);
+        Slider slider = new Slider(0, 100, 50);
         root.getChildren().addAll(left,right);
-        left.getChildren().addAll(slid, sr, colorPicker1, circleColor, colorPicker2, backgroundColor);
+        left.getChildren().addAll(slid, slider, colorPicker1, circleColor, colorPicker2, backgroundColor);
         right.getChildren().addAll(circle);
 
         HBox.setHgrow(right, Priority.ALWAYS);
@@ -41,7 +41,7 @@ public class ColorCR extends Application{
 
 
         circleColor.setOnAction(e -> circle.setFill(circleColor.getValue()));
-        circle.radiusProperty().bind(sr.valueProperty());
+        circle.radiusProperty().bind(slider.valueProperty());
         backgroundColor.setOnAction(e -> right.setBackground(new Background(new BackgroundFill(backgroundColor.getValue(), null, null))));
 
 

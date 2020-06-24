@@ -22,12 +22,12 @@ public class Texting extends Application{
     }
     private HBox initInterface() {
         HBox root = new HBox();
-        VBox vbox = new VBox();
+        VBox vbox1 = new VBox();
         VBox vbox2 = new VBox();
-        root.getChildren().addAll(vbox,vbox2);
+        root.getChildren().addAll(vbox1,vbox2);
         TextArea textarea = new TextArea();
         HBox hbox = new HBox();
-        vbox.getChildren().addAll(textarea,hbox);
+        vbox1.getChildren().addAll(textarea,hbox);
         TextField tf = new TextField();
         Button butt = new Button("Отправить");
         hbox.getChildren().addAll(tf,butt);
@@ -35,7 +35,7 @@ public class Texting extends Application{
         ListView list = new ListView();
         vbox2.getChildren().addAll(label,list);
 
-        HBox.setHgrow(vbox, Priority.ALWAYS);
+        HBox.setHgrow(vbox1, Priority.ALWAYS);
         VBox.setVgrow(textarea, Priority.ALWAYS);
         HBox.setHgrow(tf,Priority.ALWAYS);
         VBox.setVgrow(list, Priority.ALWAYS);
