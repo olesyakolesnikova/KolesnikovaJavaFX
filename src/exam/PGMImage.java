@@ -22,9 +22,9 @@ public class PGMImage {
 
     public void saveTo(String filename) throws IOException {
         try (PrintStream out = new PrintStream(filename, StandardCharsets.UTF_8)) {
-            out.println("P2");
-            out.println(width + " " + height);
-            out.println("255");
+            out.print("P2" + "\n");
+            out.print(width + " " + height + "\n");
+            out.print("255" + "\n");
 
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
