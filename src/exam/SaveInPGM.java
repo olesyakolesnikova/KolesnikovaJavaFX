@@ -46,11 +46,6 @@ public class SaveInPGM extends Application {
                 label.setTranslateY(120);
                 label.setTextFill(Color.RED);
 
-                try{
-                    savePGM(file.getAbsolutePath());
-                } catch (IOException a) {
-                    a.printStackTrace();
-                }
             }
         });
 
@@ -58,27 +53,6 @@ public class SaveInPGM extends Application {
         stac.getChildren().addAll(button, label);
         stage.setScene(new Scene(stac, 400, 400));
         stage.show();
-    }
-
-    public void savePGM(String filename) throws IOException {
-        Image img = new Image("filename");
-
-        PixelReader pixelReader = img.getPixelReader();
-
-        int w = (int) img.getWidth();
-        int h = (int) img.getHeight();
-        PGMImage pgm = new PGMImage(w, h);
-
-
-        for (int x = 0; x < w; x++) {
-            for (int y = 0; x < h; y++) {
-                Color color = pixelReader.getColor(x, y);
-                double pgmCol = color.getRed() * 0.2126 + color.getGreen() * 0.0722 + color.getBlue() * 0.7152;
-                double pgmCol2 = pgmCol * 255;
-                pgm.setPixel(x, y, (int)pgmCol2);
-            }
-        }
-        pgm.saveTo("D:\\Lesya\\Desktop\\progsredy\\osnovy_programmirovanya\\4sem\\src\\exam\\newPic.pgm");
     }
 
     public static void main(String[] args) {
