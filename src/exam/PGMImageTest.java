@@ -5,7 +5,7 @@ import java.util.Random;
 public class PGMImageTest {
     public static void main(String[] args) throws IOException {
 
-        PGMImage randomPix = new PGMImage(60, 80);
+        PGMImage randomPix = new PGMImage(80, 60);
         Random random = new Random();
         for (int x = 0; x < randomPix.width; x++)
             for (int y = 0; y < randomPix.height; y++)

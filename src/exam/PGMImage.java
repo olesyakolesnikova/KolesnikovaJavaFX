@@ -17,8 +17,6 @@ public class PGMImage {
     }
 
     void setPixel(int x, int y, int color) {
-        this.width = x;
-        this.height = y;
         pixColor[x][y] = color ;
     }
 
